@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <form>
+      <form onsubmit="sendEmail(); reset(); return false;">
         <h3>GET IN TOUCH</h3>
         <input type="text" id="name" placeholder="Your name" required />
         <input type="email" id="email" placeholder="Email ID" required />
@@ -22,5 +22,20 @@
         <button type="submit">Send Message</button>
       </form>
     </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          Host: "smtp.yourisp.com",
+          Username: "username",
+          Password: "password",
+          To: "them@website.com",
+          From: "you@isp.com",
+          Subject: "This is the subject",
+          Body: "And this is the body",
+        }).then((message) => alert(message));
+      }
+    </script>
   </body>
 </html>
