@@ -12,7 +12,7 @@ function App() {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (!email || !subject || !message) {
-      return toast.error("Please fill email, subject and message");
+      return toast.error("Please fill email, subject and message!");
     }
     try {
       setLoading(true);
@@ -61,7 +61,9 @@ function App() {
         </div>
         <div>
           <label></label>
-          <button type="submit">Submit</button>
+          <button disabled={loading} type="submit">
+            {loading ? "Sending..." : "Submit"}
+          </button>
         </div>
       </form>
       <ToastContainer position="bottom-center" limit={1} />
