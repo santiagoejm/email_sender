@@ -37,3 +37,8 @@ app.post("/api/email", (req, res) => {
       }
     );
 });
+
+const port = process.env.PORT || 4000;
+app.listen(port, () => {
+  console.log(`Server Listening at port ${port}`);
+});
