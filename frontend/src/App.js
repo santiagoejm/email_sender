@@ -35,38 +35,40 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Send Email</h1>
-      <form onSubmit={submitHandler}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="subject">Subject</label>
-          <input
-            onChange={(e) => setSubject(e.target.value)}
-            type="text"
-            id="subject"
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="message">Message</label>
-          <textarea
-            onChange={(e) => setMessage(e.target.value)}
-            id="message"
-          ></textarea>
-        </div>
-        <div>
-          <label></label>
-          <button disabled={loading} type="submit">
-            {loading ? "Sending..." : "Submit"}
-          </button>
-        </div>
-      </form>
-      <ToastContainer position="bottom-center" limit={1} />
+      <header className="App-header">
+        <form onSubmit={submitHandler}>
+          <h1>Send Email</h1>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="subject">Subject</label>
+            <input
+              onChange={(e) => setSubject(e.target.value)}
+              type="text"
+              id="subject"
+            ></input>
+          </div>
+          <div>
+            <label htmlFor="message">Message</label>
+            <textarea
+              onChange={(e) => setMessage(e.target.value)}
+              id="message"
+            ></textarea>
+          </div>
+          <div>
+            <label></label>
+            <button disabled={loading} type="submit">
+              {loading ? "Sending..." : "Submit"}
+            </button>
+          </div>
+        </form>
+        <ToastContainer position="bottom-center" limit={1} />
+      </header>
     </div>
   );
 }
